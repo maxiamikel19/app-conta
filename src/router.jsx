@@ -5,31 +5,34 @@ import Login from "./views/auth/Login";
 import Register from "./views/auth/Register";
 import Home from "./views/Home";
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <DefaultLayout />,
-    children: [
-      {
-        index: true,
-        element: <Home />,
-      },
-    ],
-  },
-  {
-    path: "/",
-    element: <AuthLayout />,
-    children: [
-      {
-        path: "/login",
-        element: <Login />,
-      },
-      {
-        path: "/register",
-        element: <Register />,
-      },
-    ],
-  },
-]);
+const router = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: <DefaultLayout />,
+      children: [
+        {
+          index: true,
+          element: <Home />,
+        },
+      ],
+    },
+    {
+      path: "/",
+      element: <AuthLayout />,
+      children: [
+        {
+          path: "/login",
+          element: <Login />,
+        },
+        {
+          path: "/register",
+          element: <Register />,
+        },
+      ],
+    },
+  ],
+  { basename: "/app-conta" }
+);
 
 export default router;
